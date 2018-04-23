@@ -1,0 +1,27 @@
+﻿@model SessionTest.Models.Usuario
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auth</title>
+</head>
+<body>
+    <body>
+    <h2>@ViewBag.Title</h2>
+    @using (Html.BeginForm(null, null, new { returnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)<br />
+        @Html.TextBoxFor(m => m.Email, new { placeholder = Html.DisplayNameFor(m => m.Email) })<br />
+        @Html.PasswordFor(m => m.Senha, new { placeholder = Html.DisplayNameFor(m => m.Senha) })<br />
+        <button type="submit">Entrar</button>
+    }
+ 
+</body>
+</body>
+</html>
+
